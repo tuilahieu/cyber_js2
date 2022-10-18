@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      .nav-item {
+        flex: 1;
+        text-align: center;
+      }
+      .result {
+        border: 1px solid green;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-size: 20px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#b1">Bài 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#b2">Bài 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#b3">Bài 3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#b4">Bài 4</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#b5">Bài 5</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content mt-5">
+        <div class="tab-pane container active" id="b1">
+          <div class="container">
+            <h2>BÀI 1: 💰 Tính tiền lương nhân viên</h2>
+            <form action="#">
+              <input
+                id="salaryDaily"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập lương một ngày"
+              />
+              <input
+                id="dayWork"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập số ngày làm"
+              />
+              <button class="btn btn-primary mt-3" onclick="caculateSalary()">
+                Tính
+              </button>
+              <div class="result result-bt1 mt-3">
+                👉<span class="m-1"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="tab-pane container fade" id="b2">
+          <div class="container">
+            <h2>BÀI 2: 📚 Tính giá trị trung bình</h2>
+            <form action="#">
+              <input
+                id="number1"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập số thứ 1"
+              />
+              <input
+                id="number2"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập số thứ 2"
+              />
+              <input
+                id="number3"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập số thứ 3"
+              />
+              <input
+                id="number4"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập số thứ 4"
+              />
+              <input
+                id="number5"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập số thứ 5"
+              />
+              <button
+                class="btn btn-primary mt-3"
+                onclick="caculateAverageNumber()"
+              >
+                Tính
+              </button>
+              <div class="result result-bt2 mt-3">
+                👉<span class="m-1"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="tab-pane container fade" id="b3">
+          <div class="container">
+            <h2>BÀI 3: 💱 Quy đổi tiền</h2>
+            <form action="#">
+              <input
+                id="usd"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập số USD cần đổi"
+              />
+              <button class="btn btn-primary mt-3" onclick="caculateUsdToVnd()">
+                Tính
+              </button>
+              <div class="result result-bt3 mt-3">
+                👉<span class="m-1"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="tab-pane container fade" id="b4">
+          <div class="container">
+            <h2>BÀI 4: 📏 Tính diện tích, chu vi hình chữ nhật</h2>
+            <form action="#">
+              <input
+                id="length"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập chiều dài HCN"
+              />
+              <input
+                id="width"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập chiều rộng HCN"
+              />
+              <button
+                class="btn btn-primary mt-3"
+                onclick="caculateRectangle()"
+              >
+                Tính
+              </button>
+              <div class="result result-bt4 mt-3">
+                👉<span class="m-1"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="tab-pane container fade" id="b5">
+          <div class="container">
+            <h2>BÀI 5: 🧮 Tính tổng 2 ký số</h2>
+            <form action="#">
+              <input
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập 1 số có 2 chữ số"
+              />
+              <button class="btn btn-primary mt-3" onclick="caculateSumary()">
+                Tính
+              </button>
+              <div class="result result-bt5 mt-3">
+                👉<span class="m-1"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
